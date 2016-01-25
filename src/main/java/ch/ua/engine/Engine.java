@@ -10,7 +10,7 @@ import ch.ua.service.CoordinatesService;
 public class Engine {
 
 	private Logger logger = Logger.getLogger(Engine.class);
-	private final HashMap<Integer, Coordinates> hash = new HashMap<Integer, Coordinates>();
+	private HashMap<Integer, Coordinates> hash = new HashMap<Integer, Coordinates>();
 	private CoordinatesService coordinatesService;
 
 	Engine() {
@@ -26,11 +26,11 @@ public class Engine {
 			Integer id = coord.getPerson().getPersonID();
 			Coordinates c = map.get(id);
 			coordinatesService.addCoordinate(c);
-			// map.replace(coord.getPerson().getPersonID(), coord);
+			map.replace(id, coord);
 
-			// Coordinates c = map.get(id);
-			map.remove(id, c);
-			map.put(id, coord);
+			/*
+			 * map.remove(id, c); map.put(id, coord);
+			 */
 		}
 	}
 

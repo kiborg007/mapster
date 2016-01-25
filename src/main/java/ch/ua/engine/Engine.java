@@ -26,7 +26,6 @@ public class Engine {
 			Integer pid = coord.getPerson().getPersonID();
 			Coordinates c = map.get(pid);
 			coordinatesService.addCoordinate(c);
-
 			map.replace(pid, coord);
 
 			/*

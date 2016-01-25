@@ -29,7 +29,7 @@ public class Engine {
 			map.replace(id, coord);
 
 			/*
-			 * map.remove(id, c); map.put(id, coord);
+			 * map.remove(id, c); map.put(id, coord); // 777
 			 */
 		}
 	}

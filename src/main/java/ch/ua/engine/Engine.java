@@ -23,11 +23,11 @@ public class Engine {
 		if (!map.containsKey(coord.getPerson().getPersonID())) {
 			map.put(coord.getPerson().getPersonID(), coord);
 		} else {
-			Integer id = coord.getPerson().getPersonID();
-			Coordinates c = map.get(id);
+			Integer pid = coord.getPerson().getPersonID();
+			Coordinates c = map.get(pid);
 			coordinatesService.addCoordinate(c);
 
-			map.replace(id, coord);
+			map.replace(pid, coord);
 
 			/*
 			 * map.remove(id, c); map.put(id, coord);

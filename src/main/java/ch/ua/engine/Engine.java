@@ -26,10 +26,11 @@ public class Engine {
 			Integer id = coord.getPerson().getPersonID();
 			Coordinates c = map.get(id);
 			coordinatesService.addCoordinate(c);
+
 			map.replace(id, coord);
 
 			/*
-			 * map.remove(id, c); map.put(id, coord); // 777
+			 * map.remove(id, c); map.put(id, coord);
 			 */
 		}
 	}

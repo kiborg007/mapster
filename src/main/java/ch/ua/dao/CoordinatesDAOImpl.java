@@ -62,7 +62,7 @@ public class CoordinatesDAOImpl implements CoordinatesDAO {
 		 */
 
 		Criteria crit = session.createCriteria(Coordinates.class);
-		List list = crit.add(Restrictions.eq("person", pers)).list();
+		List<?> list = crit.add(Restrictions.eq("person", pers)).list();
 
 		if (list.isEmpty() || list == null) {
 			coord = new Coordinates();

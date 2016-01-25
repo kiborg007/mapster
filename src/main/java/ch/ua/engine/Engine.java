@@ -23,8 +23,14 @@ public class Engine {
 		if (!map.containsKey(coord.getPerson().getPersonID())) {
 			map.put(coord.getPerson().getPersonID(), coord);
 		} else {
-			coordinatesService.addCoordinate(map.get(coord.getPerson().getPersonID()));
-			map.replace(coord.getPerson().getPersonID(), coord);
+			Integer id = coord.getPerson().getPersonID();
+			Coordinates c = map.get(id);
+			coordinatesService.addCoordinate(c);
+			// map.replace(coord.getPerson().getPersonID(), coord);
+
+			// Coordinates c = map.get(id);
+			map.remove(id, c);
+			map.put(id, coord);
 		}
 	}
 

@@ -17,20 +17,20 @@ public class Engine {
 
 	}
 
-	/*
-	 * public synchronized void put(Coordinates coord) {
-	 * 
-	 * HashMap<Integer, Coordinates> map = getHash(); if
-	 * (!map.containsKey(coord.getPerson().getPersonID())) {
-	 * map.put(coord.getPerson().getPersonID(), coord); } else { Integer pid =
-	 * coord.getPerson().getPersonID(); Coordinates c = map.get(pid);
-	 * coordinatesService.addCoordinate(c); map.replace(pid, coord);
-	 * 
-	 * 
-	 * 123 map.remove(id, c); map.put(id, coord);
-	 * 
-	 * } }
-	 */
+	public synchronized void put(Coordinates coord) {
+
+		/*
+		 * HashMap<Integer, Coordinates> map = getHash(); if
+		 * (!map.containsKey(coord.getPerson().getPersonID())) {
+		 * map.put(coord.getPerson().getPersonID(), coord); } else { Integer pid
+		 * = coord.getPerson().getPersonID(); Coordinates c = map.get(pid);
+		 * coordinatesService.addCoordinate(c); map.replace(pid, coord);
+		 * 
+		 * // map.remove(id, c); map.put(id, coord);
+		 * 
+		 * }
+		 */
+	}
 
 	public Coordinates get(Integer id) {
 		if (hash.containsKey(id)) {

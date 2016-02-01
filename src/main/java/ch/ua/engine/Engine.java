@@ -17,19 +17,19 @@ public class Engine {
 
 	}
 
-	public synchronized void put(Coordinates coord) {
+	public void put(Coordinates coord) {
 
-		/*
-		 * HashMap<Integer, Coordinates> map = getHash(); if
-		 * (!map.containsKey(coord.getPerson().getPersonID())) {
-		 * map.put(coord.getPerson().getPersonID(), coord); } else { Integer pid
-		 * = coord.getPerson().getPersonID(); Coordinates c = map.get(pid);
-		 * coordinatesService.addCoordinate(c); map.replace(pid, coord);
-		 * 
-		 * // map.remove(id, c); map.put(id, coord);
-		 * 
-		 * }
-		 */
+		Integer pid = coord.getPerson().getPersonID();
+		HashMap<Integer, Coordinates> map = getHash();
+		if (!map.containsKey(pid)) {
+			map.put(pid, coord);
+		} else {
+			Coordinates c = map.get(pid);
+			coordinatesService.addCoordinate(c);
+			map.replace(pid, coord);
+			// map.remove(id, c); map.put(id, coord);
+		}
+
 	}
 
 	public Coordinates get(Integer id) {
